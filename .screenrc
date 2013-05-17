@@ -1,0 +1,25 @@
+startup_message off
+
+# Use C-\ as shortcut key
+# escape ^\\
+
+# Display a caption string below, appearing like tabs and
+# displaying the window number and application name (by default).
+caption always
+caption string "%{kw}%-w%{wr}%n %t%{-}%+w"
+
+# Special keys. C-a m will spawn Mutt, for example, on window 7 (if it
+# # is available), or the next available window.
+# bind m screen -t 'Mutt'    7 mutt
+# bind e screen -t 'Elinks' 8 elinks www.google.co.in
+# bind i screen -t 'Irssi'   9 irssi
+
+# terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+attrcolor b ".I"
+# tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# erase background with current bg color
+defbce "on"
+
+bell_msg 'ERROR!'
