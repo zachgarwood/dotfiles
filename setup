@@ -1,0 +1,23 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "$0" )" && pwd )"
+HOST=$(hostname)
+ORIGINALS=$DIR/originals/$HOST
+DOTFILES=$DIR/.[!.]*
+
+if [ ! -d $ORIGINALS ]
+then
+    mkdir $ORIGINALS
+fi
+
+for FILE in $DOTFILES
+do
+    if [ ! -d $FILE ] && [ ! -h ~/.${FILE##*.} ]
+    then
+        mv --update --verbose ~/.${FILE##*.} $ORIGINALS
+    fi
+    if [ ! -d $FILE ]
+    then
+        ln --symbolic --verbose $FILE ~/
+    fi
+done
