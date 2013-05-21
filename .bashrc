@@ -91,6 +91,8 @@ if [ -x /usr/bin/dircolors ]; then
     #alias egrep='egrep --color=auto'
 fi
 
+alias ack='ack-grep'
+
 # grep junk
 grep_exclude_dirs='\.svn
 *lib/Zend*
