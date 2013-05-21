@@ -11,9 +11,6 @@ export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 # ... or force ignoredups and ignorespace
 export HISTCONTROL=ignoreboth
 
-# For syncing prod DB to dev
-export PGPASSWORD=NitsEkyiag8 
-
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -70,6 +67,9 @@ xterm*|rxvt*)
     ;;
 esac
 
+# Set vim as the default editor
+export EDITOR=vim
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -115,9 +115,6 @@ alias svnstat='svn status --ignore-externals' # don't check externals now
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
-
-alias logon='clear; ssh Administrator@pinpointcollegefinder.com'
-alias mothership='clear; ssh zgarwood@67.173.7.214'
 
 alias up='cd ..'
 
