@@ -13,4 +13,3 @@ set showcmd
 filetype plugin indent on
 set pastetoggle=<F2>
 set showmode
-set number
