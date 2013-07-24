@@ -13,3 +13,12 @@ set showcmd
 filetype plugin indent on
 set pastetoggle=<F2>
 set showmode
+
+" remove trailing whitespaces on write
+function! StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+autocmd BufWritePre *.php :call StripTrailingWhitespaces()
