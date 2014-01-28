@@ -1,3 +1,4 @@
+" personal settings
 syntax on
 colorscheme slate
 set expandtab
@@ -10,15 +11,25 @@ set smartcase
 set wildmenu
 set laststatus=2
 set showcmd
-filetype plugin indent on
 set pastetoggle=<F2>
 set showmode
 
-" remove trailing whitespaces on write
-function! StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    call cursor(l, c)
-endfun
-autocmd BufWritePre *.php :call StripTrailingWhitespaces()
+" Vundle settings
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" bundles
+Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+Bundle 'gmarik/vundle'
+Bundle 'godlygeek/tabular'
+Bundle 'leshill/vim-json'
+Bundle 'lukaszb/vim-web-indent'
+Bundle 'spf13/PIV'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'Townk/vim-autoclose'
+Bundle 'tpope/vim-fugitive'
+
+filetype plugin indent on

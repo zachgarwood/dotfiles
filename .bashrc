@@ -144,4 +144,5 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-PATH=$PATH:$HOME/bin
+export PATH="$HOME/.nodes/0.10.23/bin:$PATH"
+export PATH="$HOME/java/jdk1.7.0_45/bin:$PATH"
