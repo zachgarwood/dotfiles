@@ -7,6 +7,7 @@ call vundle#begin()
 " Vundle plugins
 Plugin 'avakhov/vim-yaml'
 Plugin 'ChrisYip/Better-CSS-Syntax-for-Vim'
+Plugin 'elixir-lang/vim-elixir'
 Plugin 'evidens/vim-twig'
 Plugin 'gmarik/vundle'
 Plugin 'godlygeek/tabular'
