@@ -5,19 +5,20 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Vundle plugins
-Plugin 'avakhov/vim-yaml'
 Plugin 'ChrisYip/Better-CSS-Syntax-for-Vim'
+Plugin 'Townk/vim-autoclose'
+Plugin 'avakhov/vim-yaml'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'evidens/vim-twig'
 Plugin 'gmarik/vundle'
 Plugin 'godlygeek/tabular'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kien/ctrlp.vim'
+Plugin 'klen/python-mode'
 Plugin 'leshill/vim-json'
 Plugin 'lukaszb/vim-web-indent'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'Townk/vim-autoclose'
 Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
@@ -43,6 +44,18 @@ syntax on
 
 " PHP CodeSniffer / Syntastic settings
 let g:syntastic_php_phpcs_args='--standard=Zend --ignore="*/tests/*"'
+
+" Pymode settings
+let g:pymode_folding = 0
+let g:pymode_indent = 1
+let g:pymode_lint = 1
+let g:pymode_lint_checkers = ['pep8']
+let g:pymode_lint_message = 1
+let g:pymode_lint_on_write = 1
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_trim_whitespaces = 1
+let g:pymode_virtualenv = 1
 
 " Tabularize settings
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
