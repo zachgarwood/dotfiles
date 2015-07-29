@@ -42,20 +42,18 @@ set tabstop=4
 set wildmenu
 syntax on
 
+" tab settings per-language
+autocmd FileType xhtml set tabstop=2 softtabstop=2 shiftwidth=2
+
 " PHP CodeSniffer / Syntastic settings
 let g:syntastic_php_phpcs_args='--standard=Zend --ignore="*/tests/*"'
 
 " Pymode settings
 let g:pymode_folding = 0
-let g:pymode_indent = 1
-let g:pymode_lint = 1
 let g:pymode_lint_checkers = ['pep8']
-let g:pymode_lint_message = 1
-let g:pymode_lint_on_write = 1
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_trim_whitespaces = 1
-let g:pymode_virtualenv = 1
+let g:pymode_syntax_indent_errors = 0
+let g:pymode_syntax_space_errors = 0
+autocmd CompleteDone * pclose
 
 " Tabularize settings
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
