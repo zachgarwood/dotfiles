@@ -137,6 +137,9 @@ function cdl {
 	ls
 	}
 
+alias delete-pyc='find . -name \*.pyc -delete; echo "All .pyc files hunted down and exterminated!"'
+alias start-cp='source env/bin/activate; PYTHONPATH=.. python -B start-ControlPanel.py dev.cfg;'
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -144,11 +147,5 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-# python autoenv
-# https://github.com/kennethreitz/autoenv
-source ~/.autoenv/activate.sh
-
 export PATH="$HOME/.nodes/0.10.23/bin:$PATH"
 export PATH="$HOME/java/jdk1.7.0_45/bin:$PATH"
-
-export PYTHONDONTWRITEBYTECODE=true
