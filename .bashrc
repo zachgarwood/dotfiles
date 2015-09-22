@@ -137,6 +137,9 @@ function cdl {
 	ls
 	}
 
+alias delete-pyc='find . -name \*.pyc -delete; echo "All .pyc files hunted down and exterminated!"'
+alias start-cp='source env/bin/activate; PYTHONPATH=.. python -B start-ControlPanel.py dev.cfg;'
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).

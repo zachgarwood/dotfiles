@@ -5,11 +5,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Vundle plugins
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Plugin 'Townk/vim-autoclose'
 Plugin 'avakhov/vim-yaml'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'evidens/vim-twig'
-Plugin 'gmarik/Vundle.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kien/ctrlp.vim'
@@ -20,6 +22,7 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/vim-auto-save'
 
 call vundle#end()
 filetype plugin indent on
@@ -46,21 +49,28 @@ syntax on
 " per-language settings
 autocmd BufNewFile,BufRead *.jsx set syntax=javascript
 autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType xhtml set tabstop=2 softtabstop=2 shiftwidth=2
 
-" PHP CodeSniffer / Syntastic settings
+" Syntastic settings
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_style_error_symbol = '✎'
+let g:syntastic_style_warning_symbol = '✎'
+" PHP
 let g:syntastic_php_phpcs_args='--standard=PSR2 --ignore="*/tests/*"'
+" Python
+let g:syntastic_python_checkers = ['flake8']
 
 " Pymode settings
 let g:pymode_folding = 0
-let g:pymode_indent = 1
-let g:pymode_lint = 1
-let g:pymode_lint_checkers = ['pep8']
-let g:pymode_lint_message = 1
-let g:pymode_lint_on_write = 1
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_trim_whitespaces = 1
-let g:pymode_virtualenv = 1
+let g:pymode_syntax_indent_errors = 0
+let g:pymode_syntax_space_errors = 0
+let g:pymode_options_max_line_length = 119
+let g:pymode_lint = 0
+autocmd CompleteDone * pclose
 
 " Tabularize settings
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
@@ -75,3 +85,7 @@ function! s:align()
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
 endfunction
+
+" Auto Save settings
+let g:auto_save = 0 
+let g:auto_save_in_insert_mode = 0
