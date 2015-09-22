@@ -5,18 +5,18 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Vundle plugins
-Plugin 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Plugin 'Townk/vim-autoclose'
 Plugin 'avakhov/vim-yaml'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'evidens/vim-twig'
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kien/ctrlp.vim'
 Plugin 'klen/python-mode'
 Plugin 'leshill/vim-json'
 Plugin 'lukaszb/vim-web-indent'
+Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
@@ -38,12 +38,17 @@ set shiftwidth=4
 set showcmd
 set showmode
 set smartcase
+set smarttab
 set tabstop=4
 set wildmenu
 syntax on
 
+" per-language settings
+autocmd BufNewFile,BufRead *.jsx set syntax=javascript
+autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
 " PHP CodeSniffer / Syntastic settings
-let g:syntastic_php_phpcs_args='--standard=Zend --ignore="*/tests/*"'
+let g:syntastic_php_phpcs_args='--standard=PSR2 --ignore="*/tests/*"'
 
 " Pymode settings
 let g:pymode_folding = 0
