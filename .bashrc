@@ -143,6 +143,8 @@ alias delete-pyc='\
     echo "All .pyc files and __pycache__ directories deleted"'
 alias start-cp='source env/bin/activate; PYTHONPATH=.. python -B start-ControlPanel.py dev.cfg;'
 
+alias old-virtualenv='python ~/Downloads/virtualenv-1.7/virtualenv.py'
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
