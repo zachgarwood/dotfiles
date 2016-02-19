@@ -22,6 +22,7 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/vim-auto-save'
 
 call vundle#end()
@@ -42,14 +43,16 @@ set showcmd
 set showmode
 set smartcase
 set smarttab
+set smartindent
 set tabstop=4
 set wildmenu
 syntax on
 
 " per-language settings
-autocmd BufNewFile,BufRead *.jsx set syntax=javascript
 autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
-autocmd FileType xhtml set tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead *.jsx set syntax=javascript
+autocmd BufNewFile,BufRead *.hbs set syntax=xhtml
 
 " Syntastic settings
 let g:syntastic_check_on_open = 1
