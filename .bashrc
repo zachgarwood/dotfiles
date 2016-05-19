@@ -154,3 +154,9 @@ fi
 
 export PATH="$HOME/.nodes/0.10.23/bin:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+export NVM_DIR="/home/zach/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

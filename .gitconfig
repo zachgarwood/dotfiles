@@ -7,3 +7,5 @@
 	default = simple
 [core]
 	excludesfile = /home/zach/.gitignore
+[pull]
+	rebase = true

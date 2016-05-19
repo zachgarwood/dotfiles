@@ -7,21 +7,21 @@ call vundle#begin()
 " Vundle plugins
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'AndrewRadev/switch.vim'
 Plugin 'ChrisYip/Better-CSS-Syntax-for-Vim'
-Plugin 'Townk/vim-autoclose'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'avakhov/vim-yaml'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'evidens/vim-twig'
 Plugin 'godlygeek/tabular'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'kien/ctrlp.vim'
 Plugin 'klen/python-mode'
 Plugin 'leshill/vim-json'
-Plugin 'lukaszb/vim-web-indent'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/vim-auto-save'
 
@@ -62,8 +62,10 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_style_error_symbol = '✎'
 let g:syntastic_style_warning_symbol = '✎'
+
 " PHP
 let g:syntastic_php_phpcs_args='--standard=PSR2 --ignore="*/tests/*"'
+
 " Python
 let g:syntastic_python_checkers = ['flake8']
 
@@ -71,8 +73,11 @@ let g:syntastic_python_checkers = ['flake8']
 let g:pymode_folding = 0
 let g:pymode_syntax_indent_errors = 0
 let g:pymode_syntax_space_errors = 0
-let g:pymode_options_max_line_length = 119
+let g:pymode_options_max_line_length = 99
 let g:pymode_lint = 0
+let g:pymode_rope_autoimport = 0
+let g:pymode_rope = 1 
+
 autocmd CompleteDone * pclose
 
 " Tabularize settings
@@ -89,6 +94,10 @@ function! s:align()
   endif
 endfunction
 
+" Airline settings
+let g:airline_powerline_fonts = 0 
+let g:airline_theme = 'simple'
+
 " Auto Save settings
-let g:auto_save = 0 
+let g:auto_save = 0
 let g:auto_save_in_insert_mode = 0
