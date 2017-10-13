@@ -93,57 +93,10 @@ fi
 
 alias ack='ack-grep'
 
-# grep junk
-grep_exclude_dirs='\.svn
-*lib/Zend*
-*lib/smarty*'
-
-GREP_OPTIONS="\
---binary-files=without-match \
---recursive \
---color=auto"
-for exclusion in $grep_exclude_dirs
-do
-    GREP_OPTIONS="$GREP_OPTIONS --exclude-dir=$exclusion"
-done
-export GREP_OPTIONS
-unset exclusion grep_exclude_dirs
-
-# svn junk
-alias svnup='svn update --ignore-externals' # don't update externals now
-alias svnstat='svn status --ignore-externals' # don't check externals now
-
 # some more ls aliases
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
-
-alias up='cd ..'
-
-function back {
-	if [ -z $1 ]; then
-		echo "Specify the number of directories to go back"
-	else
-		for (( c=1; c<=$1; c++ ))
-		do
-			cd ..
-		done
-	fi
-	}
-alias peek='cd "$1"; ls'
-
-function cdl {
-	cd $1
-	ls
-	}
-
-alias delete-pyc='\
-    find . -name \*.pyc -delete; \
-    find . -name __pycache__ -delete; \
-    echo "All .pyc files and __pycache__ directories deleted"'
-alias start-cp='source env/bin/activate; PYTHONPATH=.. python -B start-ControlPanel.py dev.cfg;'
-
-alias old-virtualenv='python ~/Downloads/virtualenv-1.7/virtualenv.py'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -154,9 +107,11 @@ fi
 
 export PATH="$HOME/.nodes/0.10.23/bin:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH=$PATH:/home/zach/.cache/rebar3/bin
 
 export NVM_DIR="/home/zach/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+[ -r /home/zach/.byobu/prompt ] && . /home/zach/.byobu/prompt   #byobu-prompt#

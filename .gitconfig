@@ -7,5 +7,6 @@
 	default = simple
 [core]
 	excludesfile = /home/zach/.gitignore
+	autocrlf = input
 [pull]
 	rebase = true
