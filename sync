@@ -22,7 +22,7 @@ do
 
     if [ ! -d $FILE ]
     then
-        ln --symbolic --verbose $FILE ~/
+        ln -sv $FILE ~/
     fi
 done
 
