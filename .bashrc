@@ -93,25 +93,9 @@ fi
 
 alias ack='ack-grep'
 
-# some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-fi
-
-export PATH="$HOME/.nodes/0.10.23/bin:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
-export PATH=$PATH:/home/zach/.cache/rebar3/bin
+export PATH="$HOME/.cache/rebar3/bin:$PATH"
 
-export NVM_DIR="/home/zach/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-[ -r /home/zach/.byobu/prompt ] && . /home/zach/.byobu/prompt   #byobu-prompt#

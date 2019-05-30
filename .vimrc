@@ -75,8 +75,6 @@ autocmd BufWritePre * StripWhitespace
 
 Plugin 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
 nnoremap <C-N> :NERDTreeToggle<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
